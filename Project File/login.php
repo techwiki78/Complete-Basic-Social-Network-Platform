@@ -5,7 +5,7 @@ include("includes/db.php");
 
 	if (isset($_POST['login'])) {
 
-		$email = htmlentities(mysqli_real_escape_string($con, $_POST['email']));
+		$emaill = htmlentities(mysqli_real_escape_string($con, $_POST['email']));
 		$pass = htmlentities(mysqli_real_escape_string($con, $_POST['pass']));
 
 		$select_user = "select * from users where user_email='$email' AND user_pass='$pass' AND status='verified'";
@@ -26,9 +26,9 @@ include("includes/db.php");
     
     	if ($arrayy['user_email'] == $email){
         $_SESSION['username'] = $arrayy['user_name'];
-        $_SESSION['fname'] = $arrayy['f_name'];
+        $_SESSION['ffname'] = $arrayy['f_name'];
         $_SESSION['lname'] = $arrayy['l_name'];
-        $_SESSION['user_Id'] = $arrayy['user_id'];
+        $_SESSION['uuser_Id'] = $arrayy['user_id'];
        // header("Location: home.php");
    		 }
 	}	
